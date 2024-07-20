@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Posts (Power Family)</title>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const targetURL = "https://www.facebook.com/groups/811442887308111"; // الرابط المستهدف
+    
+                // دالة للتحقق من التغييرات والتلاعب
+                function checkChanges() {
+                    const mohamedLink = document.querySelector('.end a');
+                    if (!mohamedLink || 
+                        (mohamedLink.textContent.trim() !== "By: Power Family" || 
+                        mohamedLink.getAttribute('href') !== targetURL)) {
+                        window.location.href = targetURL;
+                    }
+                }
+    
+                // استخدام MutationObserver لمراقبة التغييرات
+                const observer = new MutationObserver(function(mutationsList, observer) {
+                    mutationsList.forEach(function(mutation) {
+                        if (mutation.type === 'attributes' || mutation.type === 'childList') {
+                            checkChanges();
+                        }
+                    });
+                });
+    
+                // بدء المراقبة لعنصر div بفئة .end
+                observer.observe(document.querySelector('.end'), { childList: true, subtree: true, attributes: true });
+    
+                // التحقق من التغييرات عند تحميل الصفحة
+                checkChanges();
+            });
+        </script>
+    <style>
+        body {
+            /* font-family: Arial, sans-serif; */
+            /* font-family: "Rubik", sans-serif; */
+            font-family: "Roboto", "Noto", "Segoe UI", "Calibre", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif" !important;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            margin: 0;
+            flex-direction: column;
+
+            /*  */
+
+        }
+
+
+        
+
+        .avatar-section input[type="file"]:focus {
+            border-color: #5b9dd9;
+        }
+
+        .avatar-section input[type="file"]::file-selector-button {
+            background: #5b9dd9;
+            color: white;
+            padding: px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .avatar-section input[type="file"]::file-selector-button:hover {
+            background: #4179a7;
+        }
+
+        /* ********************** */
+        .post-content {
+            font-weight: weight;
+            direction: rtl;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            padding: 10px;
+            /* box-sizing: border-box; */
+            margin-bottom: 20px;
+        }
+
+        .end {
+            background-color: #0866ff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            padding: 10px;
+            /* box-sizing: border-box; */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+        }
+        .section {
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            width: 60%;
+            padding: 10px;
+            text-align: center;
+            font-family: "Tahoma";
+            font-size: 15px;
+        }
+        input, textarea {
+            width: calc(100%);
+            padding: 10px;
+            margin: 3px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            /* font-family: Tahoma; */
+            font-family: "Roboto", "Noto", "Segoe UI", "Calibre", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif" !important;
+            font-size: 15px;
+        }
+        .upload-button {
+            background-color: #0866ff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            margin-bottom: 5px;
+            /* font-family: "Tahoma"; */
+            font-size: 15px;
+            font-family: "Roboto", "Noto", "Segoe UI", "Calibre", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif" !important;
+        }
+        .upload-button:hover {
+            background-color: #0866ff;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .post {
+            background-color: #fff;
+            /* border-radius: 10px; */
+            /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+            width: 500px;
+            padding: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+        }
+        .post-header img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            margin-top: -9px;
+
+        }
+
+        
+        .post-header .user-info .name {
+            font-weight: bold;
+        }
+        .post-header .user-info .time {
+            color: #616770;
+            font-size: 10px;
+        }
+        .total-interactions {
+            margin: auto;
+            margin-left: 11px;
+            display: flex;
+            gap: 13px;
+            font-size: 13px;
+            color: #616770;
+            /* margin-top: 0px; */
+        }
+        .post-content {
+            
+            /* font-family: "Rubik", sans-serif; */
+            margin-top: 5px;
+            font-size: 20px;
+
+            overflow-wrap: break-word;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            padding-bottom: 15px;
+            /* display: flex; */
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .post-footer .actions {
+            display: flex;
+            margin-left: 5px;
+        }
+
+
+        
+        .post-footer .actions span {
+            /* display: flex; */
+            align-items: center;
+            cursor: pointer;
+            margin-left: -9px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-size: 13px;
+
+        }
+
+        /* .post-footer .actions img{
+            margin-top: 5px;
+        } */
+
+
+        .post-footer .counters {
+            display: flex;
+            gap: 10px;
+            font-size: 13px;
+            color: #616770;
+            margin-right: 0px;
+        }
+        .close-button {
+            text-align: right;
+        }
+        .close-button img {
+            position: absolute;
+            top: 26px;
+            right: 16px;
+            width: 18px;
+            opacity: 0.6;
+            margin-right: 0px;
+        }
+        .hidden {
+            display: none;
+        }
+        .avatar-section {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .avatar-section input[type="file"] {
+            flex-grow: 1;
+        }
+        .name-verification {
+            display: flex;
+            align-items: center;
+        }
+        .name-verification img{
+            width: 19px;
+            height: 19px;
+            margin-right: 0px;
+            margin-top: 2px;
+        }
+
+        .verification-icon {
+            /* margin-left: 5px;  */
+            margin-top: 5px;
+        }
+        img#display-image{
+            border-radius: 10px;
+            margin: auto;
+            width: 100%;
+            height: 300px;
+            margin-top: 5px;
+        }
+
+
+        .dark-mode {
+            background-color: rgb(24, 24, 24);
+            color: white;
+        }
+
+        .dark-modereqt{
+            background-color: rgb(29, 26, 26);
+            color: rgb(167, 167, 167);
+        }
+        .end a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 15px;
+        }
+
+
+        #haha, #wow, #sad ,#Care,#love{
+            display: none;
+        }
+
+        .save {
+            background-color: #228d0d;
+            border-radius: 8px;
+            /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+            width: 500px;
+            padding: 10px;
+            /* box-sizing: border-box; */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        button#download-post {
+            background-color: #228d0d;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 5px;
+            width: 100%;
+            height: 60px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            /* font-family: "Tahoma"; */
+            font-size: 15px;
+            font-family: "Roboto", "Noto", "Segoe UI", "Calibre", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif" !important;
+        }
+
+        .post-footer .actions img {
+            margin-top: 5px;
+        }
+
+    </style>
+    <style>
+        .text-right {
+            direction: rtl;
+            text-align: right;
+        }
+        .text-left {
+            direction: ltr;
+            text-align: left;
+        }
+    </style>
+<style>
+    .button-container {
+      display: flex;
+      gap: 10px; 
+      margin-top: 5px;
+    }
+  </style>
+<style>
+    @media (max-width: 768px) {
+        .container {
+            width: 95%; 
+        }
+
+        .post  {
+            width: 95%; 
+        }
+
+        .post-content{
+            font-size: 15px;
+        }
+
+        .post-footer .counters {
+            display: flex;
+            gap: 4px;
+            font-size: 11px;
+            color: #616770;
+            margin-right: 0px;
+            /* margin-top: 4px; */
+            margin-top: 7px;
+
+        }
+
+        .end , .save{
+            width: 91%;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+            padding: 6px;
+        }
+        .name-verification img {
+            margin-top: 2px;
+        }
+
+        .total-interactions , .post-footer .actions span{
+            font-size: 11px;
+            gap: 11px;
+            margin-top: 7px;
+        }
+
+        .post-footer .actions img {
+            width: 21px;
+        }
+
+        .actions img {
+           margin-top: 2px;
+        }
+
+
+    }
+</style>
+
+<!-- <style>
+    @media (max-width: 360px) {
+        .container {
+            width: 95%;
+        }
+
+        .post  {
+            width: 95%; 
+        }
+
+        .post-content{
+            font-size: 15px;
+        }
+
+        .post-footer .counters {
+            display: flex;
+            gap: 4px;
+            font-size: 10px;
+            color: #616770;
+            
+        }
+
+        
+        .upload-button {
+            padding: 9px;
+        }
+    }
+</style> -->
+</head>
+<body>
+    <div class="container">
+        <div class="avatar-section">
+            <input type="file" id="avatar-upload" class="upload-button" width="200px">
+            <div class="section">صورة البروفايل</div>
+        </div>
+        <input type="text" id="name" maxlength="20" placeholder="أدخل أسم حسابك هنا">
+        <textarea id="post-text" placeholder="أدخل نص المنشور هنا"></textarea>
+        <div class="avatar-section">
+            <input type="file" id="image-upload" class="upload-button">
+            <div class="section">إضافة صورة</div>
+        </div>
+        <div id="interaction-fields" class="hidden">
+            <input type="number" id="like-count" placeholder="Number of Likes" value="7" min="1" maxlength="7">
+            <input type="number" id="comment-count" placeholder="Number of Comments" value="1" min="0" maxlength="7">
+            <input type="number" id="share-count" placeholder="Number of Shares" value="1" min="0" maxlength="7">
+        </div>
+        <!-- <button id="toggle-actions" class="upload-button">إضافة أعداد التفاعل</button>
+        <br>
+
+        <button id="toggle-dark-mode" class="upload-button">دارك مود</button>
+        <br>
+        <button id="download-post" class="upload-button">تحميل صورة البوست</button> -->
+
+        <div class="button-container">
+            <button id="toggle-actions" class="upload-button">أعداد التفاعل</button>
+            <button id="toggle-dark-mode" class="upload-button">دارك مود</button>
+            
+          </div>
+        <div class="button-container">
+          <!-- <button class="upload-button" onclick="toggleVisibility('like')">Like</button> -->
+          <button class="upload-button" onclick="toggleVisibility('Care')">Care</button>
+          <button class="upload-button" onclick="toggleVisibility('love')">love</button>
+
+          <button class="upload-button" onclick="toggleVisibility('sad')">sad</button>
+          <button class="upload-button" onclick="toggleVisibility('wow')">wow</button>
+          <button class="upload-button" onclick="toggleVisibility('haha')">haha</button>
+
+        </div>
+    </div>
+
+    <div class="post" id="post">
+        <div class="close-button">
+            <!-- &hellip; -->
+        <img src="more_icon_177186.png" alt="">
+        </div>
+        <div class="post-header">
+            <img id="display-avatar" src="123.png" alt="Avatar">
+            <div class="user-info">
+                <div class="name-verification">
+                    <span class="name" id="display-name">Username</span>
+                    <div class="verification-icon">
+                        <img src="verification.png" alt="Verified Icon">
+                    </div>
+                </div>
+                <span class="time" id="display-username"></span>
+            </div>
+        </div>
+        
+
+
+        <!-- Hello dear family in the Power Family group, we are always here to support and inspire each other. In this family, we share dreams and cooperate to achieve them, strengthen mutual strength and grow together. -->
+
+        <div class="post-content" id="display-text">
+            كل فرد في Power Family يملك قوة فريدة، وعندما نجتمع كعائلة، نصبح أقوى بكثير. لنستمر في بناء جسور الثقة والتفاهم، ولندعم بعضنا البعض في كل خطوة نخطوها. لنبذل جهودنا معًا لنحقق النجاحات ونتعلم من التحديات.
+        </div>
+        <img id="display-image" src="" alt="" style="display: none;" width="400">
+        <div class="post-footer">
+            <div class="actions" id="action-icons" class="hidden">
+                <span id="like"><img src="like.png" width="25"></span>
+                <span id="Care"><img src="Care.png" width="25"></span>
+                <span id="love"><img src="love.png" width="25" ></span>
+
+                <span id="haha"><img src="haha.png" alt="haha" width="25"></span>
+                <span id="sad"><img src="11820230.png" alt="sad" width="25"></span>
+                <span id="wow"><img src="wow.png" alt="wow" width="25"></span>
+
+
+                
+                <div class="total-interactions">
+
+                    
+                    <span id="name-list"></span>
+                    <span id="total-interactions-value">9</span>
+                    <span id="moree"> others </span>
+                </div>
+            </div>
+            <div class="counters">
+                <span id="comment-counter">1 Comment</span>
+                <span id="share-counter">1 Share</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="save">
+        <button id="download-post" class="upload-button">تحميل الصورة</button>
+    </div>
+
+    <div class="end">
+        <a href="https://www.facebook.com/groups/811442887308111">By: Power Family</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.9.0/dist/html-to-image.min.js"></script>
+    
+    
+
+ <script>
+        function changeTimeText() {
+            const timeOptions = ["30 minutes ago", "1 hour ago", "2 hours ago", "3 hours ago"];
+            const randomIndex = Math.floor(Math.random() * timeOptions.length);
+            const newTimeText = timeOptions[randomIndex];
+            
+            const timeElement = document.querySelector(".time#display-username");
+            if (timeElement) {
+                timeElement.textContent = newTimeText;
+            }
+        }
+
+        // Change the time text when the page loads
+        window.onload = changeTimeText;
+    </script>
+
+
+
+
+<script>
+
+    document.getElementById('toggle-dark-mode').addEventListener('click', function() {
+                var postElement = document.getElementById('post');
+    
+                var req = document.getElementById("name-list");
+    
+    
+    
+                postElement.classList.toggle('dark-mode');
+                // req.classList.toggle('dark-modereqt');
+            });
+    </script>
+
+    <script>
+
+const names = [
+    "Ali", "Sam", "Amm", "Zak", "Tom", "Max", "Roy", "Ray", "Aly", "Leo",
+    "Aya", "Lia", "May", "Lyn", "Nia", "Zoe", "Eva", "Joy", "Kim", "Mia"
+];
+
+function updateNameList() {
+    // احتمالية عرض 3 أسماء عشوائية
+    const randomNames = [];
+    while (randomNames.length < 2) {
+        const randomIndex = Math.floor(Math.random() * names.length);
+        const randomName = names[randomIndex];
+        if (!randomNames.includes(randomName)) {
+            randomNames.push(randomName);
+        }
+    }
+
+    const nameListElement = document.getElementById("name-list");
+
+    // إضافة كلمة "and" بعد آخر اسم فقط
+    const formattedNames = randomNames.join(", ") + " and";
+    nameListElement.textContent = formattedNames;
+}
+
+updateNameList();
+
+
+    </script>
+    
+    
+    <script>
+
+
+        document.getElementById('download-post').addEventListener('click', function() {
+            var postElement = document.getElementById('post');
+            htmlToImage.toPng(postElement)
+                .then(function (dataUrl) {
+                    var link = document.createElement('a');
+                    link.href = dataUrl;
+                    link.download = 'post.png';
+                    link.click();
+                })
+                .catch(function (error) {
+                    console.error('Error generating image:', error);
+                });
+        });
+
+
+        // //////////////////////////////////////////
+//     document.getElementById('download-post').addEventListener('click', function() {
+//     var postElement = document.getElementById('post');
+    
+//     postElement.style.width = '600px';  
+//     // postElement.style.height = '300px'; 
+//     postElement.style.padding = '10px 10px 10px 10px'; 
+//     postElement.style.margin = '0';  
+//     // postElement.style.borderRadius = '10px 10px 10px 10px'; 
+//     // postElement.style.overflow = 'hidden';  
+    
+//     // postElement.style.textAlign = 'left';  
+    
+//     var innerElements = postElement.getElementsByClassName('inner-element');
+//     for (var i = 0; i < innerElements.length; i++) {
+//         var innerElement = innerElements[i];
+//         // innerElement.style.width = '580px';  
+//         // innerElement.style.height = '280px'; 
+//         // innerElement.style.padding = '10px';  
+//     }
+    
+
+//     var options = {
+//         width: 620,
+//         // height: 300
+
+//     };
+    
+    
+//     htmlToImage.toPng(postElement, options) 
+//         .then(function (dataUrl) {
+//             var link = document.createElement('a');
+//             link.href = dataUrl;
+//             link.download = 'post.png';
+//             link.click();
+            
+//             postElement.style.width = ''; 
+//             postElement.style.height = ''; 
+//             postElement.style.padding = ''; 
+//             postElement.style.margin = ''; 
+//             postElement.style.border = ''; 
+//             postElement.style.borderRadius = ''; 
+//             postElement.style.textAlign = ''; 
+            
+//             for (var i = 0; i < innerElements.length; i++) {
+//                 var innerElement = innerElements[i];
+//                 innerElement.style.width = ''; 
+//                 innerElement.style.height = ''; 
+//                 innerElement.style.padding = ''; 
+//             }
+//         })
+//         .catch(function (error) {
+//             console.error('Error generating image:', error);
+            
+//             postElement.style.width = ''; 
+//             postElement.style.height = ''; 
+//             postElement.style.padding = ''; 
+//             postElement.style.margin = ''; 
+//             postElement.style.border = ''; 
+//             postElement.style.borderRadius = '';
+//             postElement.style.textAlign = ''; 
+            
+//             for (var i = 0; i < innerElements.length; i++) {
+//                 var innerElement = innerElements[i];
+//                 innerElement.style.width = ''; 
+//                 innerElement.style.height = ''; 
+//                 innerElement.style.padding = ''; 
+//             }
+//         });
+// });
+
+
+    // 111111111111111111111111111111111
+
+
+
+
+
+
+
+
+    // 111111111111111111111111111111111111
+
+
+
+    document.getElementById('name').addEventListener('input', function() {
+    document.getElementById('display-name').innerText = this.value || 'Username';
+});
+document.getElementById('post-text').addEventListener('input', function() {
+    var postContent = document.getElementById('display-text');
+    var postText = this.value || 'كل فرد في Power Family يملك قوة فريدة، وعندما نجتمع كعائلة، نصبح أقوى بكثير. لنستمر في بناء جسور الثقة والتفاهم، ولندعم بعضنا البعض في كل خطوة نخطوها. لنبذل جهودنا معًا لنحقق النجاحات ونتعلم من التحديات.';
+    var isArabic = /[\u0600-\u06FF]/.test(postText); 
+    postContent.innerText = postText;
+    postContent.style.direction = isArabic ? 'rtl' : 'ltr';
+});
+document.getElementById('image-upload').addEventListener('change', function(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+        const image = document.getElementById('display-image');
+        image.src = reader.result;
+        image.style.display = 'block';
+    };
+    if (event.target.files[0]) {
+        reader.readAsDataURL(event.target.files[0]);
+    }
+});
+document.getElementById('avatar-upload').addEventListener('change', function(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+        const avatar = document.getElementById('display-avatar');
+        avatar.src = reader.result;
+    };
+    if (event.target.files[0]) {
+        reader.readAsDataURL(event.target.files[0]);
+    }
+});
+document.getElementById('toggle-actions').addEventListener('click', function() {
+    const interactionFields = document.getElementById('interaction-fields');
+    const actionIcons = document.getElementById('action-icons');
+    const totalInteractions = document.getElementById('total-interactions-value');
+    if (interactionFields.classList.contains('hidden')) {
+        interactionFields.classList.remove('hidden');
+        actionIcons.classList.remove('hidden');
+        totalInteractions.innerText = calculateTotalInteractions();
+    } else {
+        interactionFields.classList.add('hidden');
+        actionIcons.classList.add('hidden');
+    }
+});
+function calculateTotalInteractions() {
+    const likeCount = parseInt(document.getElementById('like-count').value) || 0;
+    const commentCount = parseInt(document.getElementById('comment-count').value) || 0;
+    const shareCount = parseInt(document.getElementById('share-count').value) || 0;
+    const totalInteractions = likeCount + commentCount + shareCount;
+    let formattedTotal = totalInteractions.toString();
+    if (totalInteractions >= 1000 && totalInteractions < 1000000) {
+        formattedTotal = (totalInteractions / 1000).toFixed(1) + 'k';
+    } else if (totalInteractions >= 1000000) {
+        formattedTotal = (totalInteractions / 1000000).toFixed(1) + 'M';
+    }
+    return formattedTotal;
+}
+document.getElementById('like-count').addEventListener('input', function() {
+    this.value = Math.max(0, parseInt(this.value)).toString().slice(0, 7);
+    updateTotalInteractions();
+});
+
+document.getElementById('comment-count').addEventListener('input', function() {
+    this.value = Math.max(0, parseInt(this.value)).toString().slice(0, 7);
+    updateTotalInteractions();
+});
+
+document.getElementById('share-count').addEventListener('input', function() {
+    this.value = Math.max(0, parseInt(this.value)).toString().slice(0, 7);
+    updateTotalInteractions();
+});
+
+function formatNumber(num) {
+    if (num >= 1000 && num < 1000000) {
+        return (num / 1000).toFixed(1) + 'K';
+    } else if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    } else {
+        return num.toString();
+    }
+}
+
+function updateTotalInteractions() {
+    const likeCount = parseInt(document.getElementById('like-count').value) || 0;
+    const commentCount = parseInt(document.getElementById('comment-count').value) || 0;
+    const shareCount = parseInt(document.getElementById('share-count').value) || 0;
+    const totalInteractions = likeCount ;
+
+    const formattedTotal = formatNumber(totalInteractions);
+
+    const totalInteractionsElement = document.getElementById('total-interactions-value');
+    totalInteractionsElement.innerText = formattedTotal;
+
+    document.getElementById('comment-counter').innerText = `${formatNumber(commentCount)} Comments`;
+    document.getElementById('share-counter').innerText = `${formatNumber(shareCount)} Shares`;
+}
+
+
+
+
+
+
+    </script>
+    <!-- <script>
+        window.onload = function() {
+            var element = document.getElementById('display-text');
+            var textContent = element.textContent || element.innerText;
+
+            // Regular expression to detect Arabic characters
+            var arabicPattern = /[\u0600-\u06FF]/;
+
+            if (arabicPattern.test(textContent)) {
+                element.classList.add('text-right');
+            } else {
+                element.classList.add('text-left');
+            }
+        };
+    </script> -->
+    <script>
+
+
+
+// var visibleIcons = []; // مصفوفة لتتبع الأيقونات التي تم عرضها
+
+// function toggleVisibility(elementId) {
+//     var element = document.getElementById(elementId);
+    
+//     // إذا كانت الأيقونة مرئية، قم بإخفائها وإزالتها من المصفوفة
+//     if (element.style.display !== 'none') {
+//         element.style.display = 'none';
+//         visibleIcons = visibleIcons.filter(id => id !== elementId);
+//     } else {
+//         // التحقق من عدد الأيقونات المرئية
+//         if (visibleIcons.length === 2 && !visibleIcons.includes(elementId)) {
+//             return; // توقف الدالة دون عرض أيقونة إضافية
+//         }
+        
+//         // إذا كانت الأيقونة مخفية، قم بإظهارها وإضافتها إلى نهاية المصفوفة
+//         element.style.display = 'inline-block';
+//         visibleIcons.push(elementId);
+//     }
+    
+//     // ضبط ترتيب الأيقونات بحيث يكون الأيقونات المرئية في نهاية القائمة
+//     var iconsContainer = document.getElementById('icons-container'); // تغييره إلى العنصر الذي يحتوي على الأيقونات
+//     visibleIcons.forEach(id => {
+//         var icon = document.getElementById(id);
+//         iconsContainer.appendChild(icon);
+//     });
+// }
+
+
+var visibleIcons = []; // مصفوفة لتتبع الأيقونات التي تم عرضها
+
+function toggleVisibility(elementId) {
+    var element = document.getElementById(elementId);
+    
+    // إذا كانت الأيقونة مرئية، قم بإخفائها وإزالتها من المصفوفة
+    if (element.style.display !== 'none') {
+        element.style.display = 'none';
+        visibleIcons = visibleIcons.filter(id => id !== elementId);
+    } else {
+        // التحقق من عدد الأيقونات المرئية
+        if (visibleIcons.length === 2 && !visibleIcons.includes(elementId)) {
+            return; // توقف الدالة دون عرض أيقونة إضافية
+        }
+        
+        // إذا كانت الأيقونة مخفية، قم بإظهارها وإضافتها إلى المصفوفة وإلى نهاية `iconsContainer`
+        element.style.display = 'inline-block';
+        visibleIcons.push(elementId);
+        var iconsContainer = document.getElementById('icons-container');
+        iconsContainer.appendChild(element); // إضافة العنصر إلى نهاية `iconsContainer`
+    }
+}
+
+
+
+
+        </script>
+        
+</body>
+</html>

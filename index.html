@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Posts (Power Family)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.9.0/dist/html-to-image.min.js"></script>
+
+    <!-- <script>
+        function _0x35d7(_0x5cdc4a,_0x1727de){const _0x52dc05=_0x52dc();return _0x35d7=function(_0x35d72b,_0x5bf17f){_0x35d72b=_0x35d72b-0x174;let _0x316f6e=_0x52dc05[_0x35d72b];return _0x316f6e;},_0x35d7(_0x5cdc4a,_0x1727de);}function _0x52dc(){const _0x20f136=['textContent','4726776iASBIn','type','forEach','location','.end','DOMContentLoaded','1UOgtyX','647506lHKDWZ','https://www.facebook.com/mohamedGamal6','1341xBkutR','48710UvsdCf','4MiMXEm','getAttribute','querySelector','33072ZNHSpj','observe','childList','789621MvGbJJ','href','8301905rpWRZf','11851774jHFUgq','2072ROxSuv','attributes'];_0x52dc=function(){return _0x20f136;};return _0x52dc();}const _0x32a374=_0x35d7;(function(_0x388fe,_0x349aaf){const _0x15bd62=_0x35d7,_0x10b342=_0x388fe();while(!![]){try{const _0x12cb70=-parseInt(_0x15bd62(0x188))/0x1*(-parseInt(_0x15bd62(0x189))/0x2)+parseInt(_0x15bd62(0x17b))/0x3+-parseInt(_0x15bd62(0x175))/0x4*(-parseInt(_0x15bd62(0x17d))/0x5)+-parseInt(_0x15bd62(0x182))/0x6+-parseInt(_0x15bd62(0x17f))/0x7*(-parseInt(_0x15bd62(0x178))/0x8)+parseInt(_0x15bd62(0x18b))/0x9*(-parseInt(_0x15bd62(0x174))/0xa)+-parseInt(_0x15bd62(0x17e))/0xb;if(_0x12cb70===_0x349aaf)break;else _0x10b342['push'](_0x10b342['shift']());}catch(_0x30047d){_0x10b342['push'](_0x10b342['shift']());}}}(_0x52dc,0xd6d7c),document['addEventListener'](_0x32a374(0x187),function(){const _0x56e084=_0x32a374,_0x2ccc56=_0x56e084(0x18a);function _0x1e4438(){const _0x13694d=_0x56e084,_0x578835=document[_0x13694d(0x177)]('.end\x20a');(!_0x578835||(_0x578835[_0x13694d(0x181)]['trim']()!=='By:\x20Mohamed\x20Gamal'||_0x578835[_0x13694d(0x176)](_0x13694d(0x17c))!==_0x2ccc56))&&(window[_0x13694d(0x185)][_0x13694d(0x17c)]=_0x2ccc56);}const _0x3c9b55=new MutationObserver(function(_0x79cf44,_0x243749){const _0x62e06b=_0x56e084;_0x79cf44[_0x62e06b(0x184)](function(_0x1bbb50){const _0x3b5f0e=_0x62e06b;(_0x1bbb50[_0x3b5f0e(0x183)]===_0x3b5f0e(0x180)||_0x1bbb50['type']===_0x3b5f0e(0x17a))&&_0x1e4438();});});_0x3c9b55[_0x56e084(0x179)](document[_0x56e084(0x177)](_0x56e084(0x186)),{'childList':!![],'subtree':!![],'attributes':!![]}),_0x1e4438();}));
+        </script> -->
+    <style>
+        body {
+            /* font-family: Arial, sans-serif; */
+            /* font-family: "Rubik", sans-serif; */
+            font-family: "Roboto", "Noto", "Segoe UI", "Calibre", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif" !important;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            margin: 0;
+            flex-direction: column;
+
+            /*  */
+
+        }
+
+
+        
+
+        .avatar-section input[type="file"]:focus {
+            border-color: #5b9dd9;
+        }
+
+        .avatar-section input[type="file"]::file-selector-button {
+            background: #5b9dd9;
+            color: white;
+            padding: px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .avatar-section input[type="file"]::file-selector-button:hover {
+            background: #4179a7;
+        }
+
+        /* ********************** */
+        .post-content {
+            font-weight: weight;
+            direction: rtl;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            padding: 10px;
+            /* box-sizing: border-box; */
+            margin-bottom: 20px;
+        }
+
+        .end {
+            background-color: #0866ff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            padding: 10px;
+            /* box-sizing: border-box; */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+        }
+        .section {
+            border: 1px solid #007bff;
+            border-radius: 8px;
+            width: 60%;
+            padding: 6px;
+            text-align: center;
+            font-family: "Tahoma";
+            font-size: 15px;
+        }
+        input, textarea {
+            width: calc(100%);
+            padding: 10px;
+            margin: 3px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            /* font-family: Tahoma; */
+            font-family: "Roboto", "Noto", "Segoe UI", "Calibre", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif" !important;
+            font-size: 13px;
+            text-align: center;
+        }
+        .upload-button {
+            background-color: #0866ff;
+            /* background-color: #5080cf; */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 6px;
+            width: 100%;
+            cursor: pointer;
+            margin-bottom: 5px;
+            /* font-family: "Tahoma"; */
+            font-size: 15px;
+            font-family: "Roboto", "Noto", "Segoe UI", "Calibre", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif" !important;
+        }
+        .upload-button:hover {
+            background-color: #0866ff;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .post {
+            background-color: #fff;
+            /* border-radius: 10px; */
+            /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+            width: 500px;
+            padding: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+        }
+        .post-header img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            margin-top: -17px;
+
+        }
+
+        
+        .post-header .user-info .name {
+            font-weight: bold;
+        }
+        
+        .post-header .user-info .time {
+            color: #616770;
+            font-size: 9px;
+            margin-top: -4px;
+            margin-left: 2px;
+        }
+
+        .total-interactions {
+            margin: auto;
+            margin-left: 11px;
+            display: flex;
+            gap: 13px;
+            font-size: 13px;
+            color: #616770;
+            /* margin-top: 0px; */
+        }
+        .post-content {
+            
+            /* font-family: "Rubik", sans-serif; */
+            margin-top: 5px;
+            font-size: 20px;
+
+            overflow-wrap: break-word;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            padding-bottom: 15px;
+            /* display: flex; */
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            /* padding-top: 10px; */
+        }
+        .post-footer .actions {
+            display: flex;
+            margin-left: 5px;
+        }
+
+
+        
+        .post-footer .actions span {
+            /* display: flex; */
+            align-items: center;
+            cursor: pointer;
+            margin-left: -9px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-size: 13px;
+
+        }
+
+        /* .post-footer .actions img{
+            margin-top: 5px;
+        } */
+
+
+        .post-footer .counters {
+            display: flex;
+            gap: 10px;
+            font-size: 13px;
+            color: #616770;
+            margin-right: 0px;
+        }
+        .close-button {
+            text-align: right;
+        }
+        .close-button img {
+            position: absolute;
+            top: 26px;
+            right: 16px;
+            width: 18px;
+            opacity: 0.6;
+            margin-right: 0px;
+        }
+        .hidden {
+            display: none;
+        }
+        .avatar-section {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .avatar-section input[type="file"] {
+            flex-grow: 1;
+        }
+        .name-verification {
+            display: flex;
+            align-items: center;
+        }
+        .name-verification img{
+            width: 19px;
+            height: 19px;
+            margin-right: 0px;
+            margin-top: 3px;
+        }
+
+        .verification-icon {
+            /* margin-left: 5px;  */
+            margin-top: 5px;
+        }
+        img#display-image{
+            border-radius: 10px;
+            margin: auto;
+            width: 100%;
+            height: 300px;
+            margin-top: 5px;
+        }
+
+
+        .dark-mode {
+            background-color: rgb(24, 24, 24);
+            color: white;
+        }
+
+        .dark-modereqt{
+            background-color: rgb(29, 26, 26);
+            color: rgb(167, 167, 167);
+        }
+        .end a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 15px;
+        }
+
+
+        #haha, #wow, #sad ,#Care ,#love{
+            display: none;
+        }
+
+        .save {
+            background-color: #228d0d;
+            border-radius: 8px;
+            /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+            width: 500px;
+            padding: 10px;
+            /* box-sizing: border-box; */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        button#download-post {
+            background-color: #228d0d;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 5px;
+            width: 100%;
+            height: 60px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            /* font-family: "Tahoma"; */
+            font-size: 15px;
+            font-family: "Roboto", "Noto", "Segoe UI", "Calibre", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif" !important;
+        }
+
+        .post-footer .actions img {
+            margin-top: 5px;
+        }
+
+        /* span#display-username {
+            margin-top: -3px;
+            margin-left: 4px;
+        } */
+
+        .avatar-section label {
+
+        padding: 10px;
+        display: inline-block;
+        cursor: pointer;
+        margin: 0 auto;
+        text-align: right;
+        width: 48%;
+        margin-top: -6px;
+    
+        }
+
+        .avatar-section input[type="file"]:focus + label {
+            border-color: #5b9dd9;
+        }
+
+    </style>
+    <style>
+        .text-right {
+            direction: rtl;
+            text-align: right;
+        }
+        .text-left {
+            direction: ltr;
+            text-align: left;
+        }
+    </style>
+<style>
+    .button-container {
+      display: flex;
+      gap: 10px; 
+      margin-top: 5px;
+    }
+  </style>
+<style>
+    @media (max-width: 768px) {
+        .container {
+            width: 95%; 
+        }
+
+        .post  {
+            width: 95%; 
+        }
+
+        .post-content{
+            font-size: 15px;
+        }
+
+
+        .post-footer .counters {
+            display: flex;
+            gap: 10px;
+            font-size: 11px;
+            color: #616770;
+            margin-right: 0px;
+            margin-top: 9px;
+
+        }
+
+        .end , .save{
+            width: 91%;
+            text-align: center;
+            font-size: 14px;
+            color: #ffffff;
+            padding: 6px;
+        }
+        .name-verification img {
+            margin-top: 3px;
+        }
+
+        .total-interactions , .post-footer .actions span{
+            font-size: 11px;
+            gap: 11px;
+            margin-top: 7px;
+        }
+
+        .post-footer .actions img {
+            width: 21px;
+        }
+
+        .actions img {
+           margin-top: 2px;
+        }
+
+        .total-interactions {
+            margin-top: 9px;
+        }
+
+    }
+</style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="avatar-section">
+            <input type="file" id="avatar-upload" class="upload-button" width="200px" accept="image/*">
+            <label for="file-upload">صورة شخصية</label>
+            <!-- <div class="section">صورة البروفايل</div> -->
+        </div>
+        <input type="text" id="name" maxlength="20" placeholder="أدخل أسم حسابك هنا">
+        <textarea id="post-text" placeholder="أدخل نص المنشور هنا"></textarea>
+        <div class="avatar-section">
+            <input type="file" id="image-upload" class="upload-button" accept="image/*">
+            <label for="file-upload">صورة للبوست</label>
+        </div>
+        <div id="interaction-fields" class="hidden">
+            <input type="number" id="like-count" placeholder="Number of Likes" value="7" min="1" maxlength="7">
+            <input type="number" id="comment-count" placeholder="Number of Comments" value="1" min="1" maxlength="7">
+            <input type="number" id="share-count" placeholder="Number of Shares" value="1" min="1" maxlength="7">
+        </div>
+
+
+
+        <div class="button-container">
+            <button id="toggle-actions" class="upload-button">أعداد التفاعل</button>
+            <button id="toggle-dark-mode" class="upload-button">الوضع الليلي</button>
+            
+          </div>
+        <div class="button-container">
+          <!-- <button class="upload-button" onclick="toggleVisibility('like')">Like</button> -->
+          <button class="upload-button" onclick="toggleVisibility('Care')">Care</button>
+          <button class="upload-button" onclick="toggleVisibility('love')">love</button>
+
+          <button class="upload-button" onclick="toggleVisibility('sad')">sad</button>
+          <button class="upload-button" onclick="toggleVisibility('wow')">wow</button>
+          <button class="upload-button" onclick="toggleVisibility('haha')">haha</button>
+
+        </div>
+    </div>
+
+    <div class="post" id="post">
+        <div class="close-button">
+        <img src="more_icon_177186.png" alt="">
+        </div>
+        <div class="post-header">
+            <img id="display-avatar" src="logo.png" alt="Avatar">
+            <div class="user-info">
+                <div class="name-verification">
+                    <span class="name" id="display-name">Username</span>
+                    <div class="verification-icon">
+                        <img src="label_verified_social_media_logo_badge_checkmark_icon_210329.png" alt="Verified Icon">
+                    </div>
+                </div>
+                <span class="time" id="display-username"></span>
+            </div>
+        </div>
+        
+
+
+        <!-- كل فرد في Power Family يملك قوة فريدة، وعندما نجتمع كعائلة، نصبح أقوى بكثير. لنستمر في بناء جسور الثقة والتفاهم، ولندعم بعضنا البعض في كل خطوة نخطوها. لنبذل جهودنا معًا لنحقق النجاحات ونتعلم من التحديات. -->
+
+        <div class="post-content" id="display-text">
+            كل فرد في Power Family يملك قوة فريدة، وعندما نجتمع كعائلة، نصبح أقوى بكثير. لنستمر في بناء جسور الثقة والتفاهم، ولندعم بعضنا البعض في كل خطوة نخطوها. لنبذل جهودنا معًا لنحقق النجاحات ونتعلم من التحديات.
+                </div>
+        <img id="display-image" src="" alt="" style="display: none;" width="400">
+        <div class="post-footer">
+            <div class="actions" id="action-icons" class="hidden">
+                <span id="like"><img src="like.png" width="25"></span>
+                <span id="Care"><img src="Care.png" width="25"></span>
+                <span id="love"><img src="love.png" width="25" ></span>
+                <span id="haha"><img src="haha.png" alt="haha" width="25"></span>
+                <span id="sad"><img src="11820230.png" alt="sad" width="25"></span>
+                <span id="wow"><img src="wow.png" alt="wow" width="25"></span>
+                <div class="total-interactions">
+                    <span id="name-list"></span>
+                    <span id="total-interactions-value">62</span>
+                    <span id="moree"> others </span>
+                </div>
+            </div>
+            <div class="counters">
+                <span id="comment-counter">17 Comment</span>
+                <span id="share-counter">45 Share</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="save">
+        <button id="download-post" class="upload-button">تحميل الصورة</button>
+    </div>
+
+    <div class="end">
+        <a href="https://www.facebook.com/groups/powerfamily">By: Power Family</a>
+    </div>
+
+    <!-- <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1198836/t/5"></script> -->
+    
+    
+    
+   
+    
+
+ <script>
+        function changeTimeText() {
+            const timeOptions = ["30 minutes ago", "1 hour ago", "2 hours ago", "3 hours ago"];
+            const randomIndex = Math.floor(Math.random() * timeOptions.length);
+            const newTimeText = timeOptions[randomIndex];
+            
+            const timeElement = document.querySelector(".time#display-username");
+            if (timeElement) {
+                timeElement.textContent = newTimeText;
+            }
+        }
+
+        // Change the time text when the page loads
+        window.onload = changeTimeText;
+    </script>
+
+
+
+
+<script>
+    document.getElementById('toggle-dark-mode').addEventListener('click', function() {
+        var postElement = document.getElementById('post');
+        var toggleButton = document.getElementById('toggle-dark-mode');
+
+        postElement.classList.toggle('dark-mode');
+        
+        if (postElement.classList.contains('dark-mode')) {
+            toggleButton.textContent = 'الوضع النهاري';
+            toggleButton.style.background = "#000000";
+        } else {
+            toggleButton.textContent = 'الوضع الليلي';
+            toggleButton.style.background = "#0866ff";
+        }
+    });
+</script>
+
+
+
+
+    <script>
+
+const names = [
+    "Ali", "Omar", "Sara", "Mona", "Amir", "Hoda", "Maha", "Nada", "Ramy", "Tara", "Gaby",
+    "Aya", "Mo", "Omnia" , "Joo","Aida", "Eman", "Toto", "Nour","Yara"
+];
+
+function updateNameList() {
+    const randomNames = [];
+    while (randomNames.length < 1) {
+        const randomIndex = Math.floor(Math.random() * names.length);
+        const randomName = names[randomIndex];
+        if (!randomNames.includes(randomName)) {
+            randomNames.push(randomName);
+        }
+    }
+
+    const nameListElement = document.getElementById("name-list");
+
+    const formattedNames = randomNames.join(", ") + " and";
+    nameListElement.textContent = formattedNames;
+    }
+
+    updateNameList();
+
+
+    </script>
+    
+    
+    <script>
+
+
+        // document.getElementById('download-post').addEventListener('click', function() {
+        //     var postElement = document.getElementById('post');
+        //     htmlToImage.toPng(postElement)
+        //         .then(function (dataUrl) {
+        //             var link = document.createElement('a');
+        //             link.href = dataUrl;
+        //             link.download = 'post.png';
+        //             link.click();
+        //         })
+        //         .catch(function (error) {
+        //             console.error('Error generating image:', error);
+        //         });
+        // });
+
+//     document.getElementById('download-post').addEventListener('click', function() {
+//     var postElement = document.getElementById('post');
+
+//     htmlToImage.toPng(postElement, { quality: 1, pixelRatio: 2 })
+//         .then(function (dataUrl) {
+//             var img = new Image();
+//             img.src = dataUrl;
+//             img.onload = function() {
+//                 var originalWidth = img.width;
+//                 var originalHeight = img.height;
+
+//                 var aspectRatio = originalHeight / originalWidth;
+
+//                 var canvasWidth = 1200;
+//                 var canvasHeight = canvasWidth * aspectRatio;
+
+//                 var canvas = document.createElement('canvas');
+//                 var ctx = canvas.getContext('2d');
+                
+//                 canvas.width = canvasWidth;
+//                 canvas.height = canvasHeight;
+                
+//                 ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
+
+//                 canvas.toBlob(function(blob) {
+//                     var link = document.createElement('a');
+//                     link.href = URL.createObjectURL(blob);
+//                     link.download = 'post.png';
+//                     link.click();
+//                 }, 'image/png');
+//             };
+//         })
+//         .catch(function (error) {
+//             console.error('Error generating image:', error);
+//         });
+// });
+
+
+document.getElementById('download-post').addEventListener('click', function() {
+    var postElement = document.getElementById('post');
+
+    htmlToImage.toPng(postElement, { quality: 1, pixelRatio: 2 })
+        .then(function (dataUrl) {
+            var img = new Image();
+            img.src = dataUrl;
+            img.onload = function() {
+                var originalWidth = img.width;
+                var originalHeight = img.height;
+
+                var aspectRatio = originalHeight / originalWidth;
+
+                var canvasWidth = 1200;
+                var canvasHeight = canvasWidth * aspectRatio;
+
+                var canvas = document.createElement('canvas');
+                var ctx = canvas.getContext('2d');
+                
+                canvas.width = canvasWidth;
+                canvas.height = canvasHeight;
+                
+                ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
+
+                canvas.toBlob(function(blob) {
+                    var link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'post.png';
+                    link.click();
+                    URL.revokeObjectURL(link.href); // Cleanup
+                }, 'image/png');
+            };
+        })
+        .catch(function (error) {
+            console.error('Error generating image:', error);
+        });
+});
+
+
+
+
+
+
+    // 111111111111111111111111111111111
+
+
+
+
+
+
+
+
+    // 111111111111111111111111111111111111
+
+
+
+    document.getElementById('name').addEventListener('input', function() {
+    document.getElementById('display-name').innerText = this.value || 'Username';
+});
+document.getElementById('post-text').addEventListener('input', function() {
+    var postContent = document.getElementById('display-text');
+    var postText = this.value || 'سيظهر نص البوست هنا.';
+    var isArabic = /[\u0600-\u06FF]/.test(postText); 
+    postContent.innerText = postText;
+    postContent.style.direction = isArabic ? 'rtl' : 'ltr';
+});
+// document.getElementById('image-upload').addEventListener('change', function(event) {
+//     const reader = new FileReader();
+//     reader.onload = function() {
+//         const image = document.getElementById('display-image');
+//         image.src = reader.result;
+//         image.style.display = 'block';
+//     };
+//     if (event.target.files[0]) {
+//         reader.readAsDataURL(event.target.files[0]);
+//     }
+// });
+document.getElementById('image-upload').addEventListener('change', function(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const image = document.getElementById('display-image');
+                image.src = reader.result;
+                image.style.display = 'block';
+            };
+            if (event.target.files[0]) {
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        });
+document.getElementById('avatar-upload').addEventListener('change', function(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+        const avatar = document.getElementById('display-avatar');
+        avatar.src = reader.result;
+    };
+    if (event.target.files[0]) {
+        reader.readAsDataURL(event.target.files[0]);
+    }
+});
+document.getElementById('toggle-actions').addEventListener('click', function() {
+    const interactionFields = document.getElementById('interaction-fields');
+    const actionIcons = document.getElementById('action-icons');
+    const totalInteractions = document.getElementById('total-interactions-value');
+    if (interactionFields.classList.contains('hidden')) {
+        interactionFields.classList.remove('hidden');
+        actionIcons.classList.remove('hidden');
+        totalInteractions.innerText = calculateTotalInteractions();
+    } else {
+        interactionFields.classList.add('hidden');
+        actionIcons.classList.add('hidden');
+    }
+});
+function calculateTotalInteractions() {
+    const likeCount = parseInt(document.getElementById('like-count').value) || 0;
+    const commentCount = parseInt(document.getElementById('comment-count').value) || 0;
+    const shareCount = parseInt(document.getElementById('share-count').value) || 0;
+    const totalInteractions = likeCount + commentCount + shareCount;
+    let formattedTotal = totalInteractions.toString();
+    if (totalInteractions >= 1000 && totalInteractions < 1000000) {
+        formattedTotal = (totalInteractions / 1000).toFixed(1) + 'k';
+    } else if (totalInteractions >= 1000000) {
+        formattedTotal = (totalInteractions / 1000000).toFixed(1) + 'M';
+    }
+    return formattedTotal;
+}
+document.getElementById('like-count').addEventListener('input', function() {
+    this.value = Math.max(0, parseInt(this.value)).toString().slice(0, 7);
+    updateTotalInteractions();
+});
+
+document.getElementById('comment-count').addEventListener('input', function() {
+    this.value = Math.max(0, parseInt(this.value)).toString().slice(0, 7);
+    updateTotalInteractions();
+});
+
+document.getElementById('share-count').addEventListener('input', function() {
+    this.value = Math.max(0, parseInt(this.value)).toString().slice(0, 7);
+    updateTotalInteractions();
+});
+
+function formatNumber(num) {
+    if (num >= 1000 && num < 1000000) {
+        return (num / 1000).toFixed(1) + 'K';
+    } else if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    } else {
+        return num.toString();
+    }
+}
+
+function updateTotalInteractions() {
+    const likeCount = parseInt(document.getElementById('like-count').value) || 0;
+    const commentCount = parseInt(document.getElementById('comment-count').value) || 0;
+    const shareCount = parseInt(document.getElementById('share-count').value) || 0;
+    const totalInteractions = likeCount ;
+
+    const formattedTotal = formatNumber(totalInteractions);
+
+    const totalInteractionsElement = document.getElementById('total-interactions-value');
+    totalInteractionsElement.innerText = formattedTotal;
+
+    document.getElementById('comment-counter').innerText = `${formatNumber(commentCount)} Comments`;
+    document.getElementById('share-counter').innerText = `${formatNumber(shareCount)} Shares`;
+}
+
+
+
+
+
+
+    </script>
+    
+
+
+    <script>
+        var visibleIcons = []; 
+
+        function toggleVisibility(elementId) {
+            var element = document.getElementById(elementId);
+            
+            if (element.style.display !== 'none') {
+                element.style.display = 'none';
+                visibleIcons = visibleIcons.filter(id => id !== elementId);
+            } else {
+                if (visibleIcons.length === 2 && !visibleIcons.includes(elementId)) {
+                    return;
+                }
+                element.style.display = 'inline-block';
+                visibleIcons.push(elementId);
+                var iconsContainer = document.getElementById('icons-container');
+                iconsContainer.appendChild(element); 
+            }
+        }
+    </script>
+
+
+
+        
+</body>
+</html>
